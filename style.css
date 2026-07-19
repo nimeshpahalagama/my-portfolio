@@ -6,53 +6,69 @@ body {
     color: #333;
 }
 
-/* පැරණි header සහ profile-img වෙනුවට මේවා දාන්න */
-.hero-header {
-    background-color: #444645; /* Dark Grey */
-    color: white;
-    padding: 40px 0;
-    position: relative;
-    overflow: hidden;
+/* Header Section (මැදට කර ඇත) */
+header {
+    background-color: #f4f7f6;
+    color: #333;
+    text-align: center;
+    padding: 30px 0 15px 0;
 }
 
-.header-container {
-    max-width: 800px;
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* 2. Dark Grey Hero/Profile Section */
+.hero-dark-section {
+    background-color: #444645; /* Dark Grey Background */
+    color: white;
+    padding: 50px 0;
+    margin-bottom: 20px;
+}
+
+.hero-inner-container {
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px;
+    padding: 0 40px;
 }
 
-.header-left {
+.hero-left-content {
     flex: 1;
 }
 
-.profile-name {
-    font-size: 2.8rem;
-    margin: 0 0 30px 0;
+.hero-main-name {
+    font-size: 3rem;
+    margin: 0 0 25px 0;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    color: white;
 }
 
-.contact-info p {
-    margin: 8px 0;
-    font-size: 1.05rem;
+.hero-contact-details p {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
 }
 
+/* Touch කරගෙන සිටින විට Copy Option එක මතුවීමට */
 .selectable-contact {
     color: #e0e0e0;
     text-decoration: none;
     transition: color 0.2s;
-    display: inline-block;
-    user-select: text !important;
-    -webkit-user-select: text !important;
-    -moz-user-select: text !important;
-    -ms-user-select: text !important;
+    user-select: all !important;
+    -webkit-user-select: all !important;
+    -moz-user-select: all !important;
+    -ms-user-select: all !important;
 }
 
-.contact-info a:hover {
+.hero-contact-details a:hover {
     color: #3498db;
+    text-decoration: underline;
 }
 
 .address-text {
@@ -60,43 +76,84 @@ body {
     cursor: text;
 }
 
-.contact-info i {
-    margin-right: 8px;
-    width: 18px;
+.hero-contact-details i {
+    margin-right: 12px;
+    width: 20px;
     color: #b0b0b0;
+    font-size: 1.1rem;
 }
 
-.header-right {
+/* Rectangular Profile Image */
+.hero-right-image {
     display: flex;
     justify-content: flex-end;
+    margin-left: 40px;
 }
 
-/* කොටු හැඩැති Profile Image එක */
-.profile-square-img {
-    width: 220px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.profile-rect-img {
+    width: 230px;
+    height: 260px;
+    object-fit: cover; /* පින්තූරය විකෘති නොවීමට */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     border: none;
     display: block;
 }
 
-.profile-section {
-    text-align: left; /* වමට align කිරීම */
+/* 3. Main Content Container Alignment (විස්තර කෙළවරටම නොගොස් වම පස සිට පෙළගස්වයි) */
+.container {
+    max-width: 1000px; /* පිටුවේ පළල සීමා කරයි */
+    margin: 0 auto 50px auto;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+    text-align: left; /* අකුරු වම් පස සිටම ආරම්භ වේ */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-left: 4px solid #3498db;
+    padding-left: 12px;
+    font-size: 1.6rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 .project-card {
-    background: #fcfcfc;
-    padding: 15px;
-    border-left: 3px solid #2ecc71;
-    margin-top: 10px;
+    background: #ffffff;
+    padding: 20px;
+    border-left: 4px solid #2ecc71;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-radius: 0 4px 4px 0;
 }
 
 .btn {
     display: inline-block;
     background-color: #27ae60;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 22px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -115,4 +172,34 @@ body {
 
 .social-links a:hover {
     text-decoration: underline;
+}
+
+.social-links i {
+    margin-right: 5px;
+}
+
+/* Mobile Responsive (දුරකථන වලට ලස්සනට පෙනීමට) */
+@media (max-width: 650px) {
+    .hero-inner-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-contact-details p {
+        justify-content: center;
+    }
+    .hero-right-image {
+        justify-content: center;
+        margin-left: 0;
+        margin-bottom: 25px;
+    }
+    .hero-main-name {
+        font-size: 2.4rem;
+    }
+    .profile-rect-img {
+        width: 190px;
+        height: 220px;
+    }
+    .container {
+        padding: 15px 20px;
+    }
 }

@@ -5,100 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Icons සඳහා Font Awesome එකතු කිරීම (මිය අයින් කරන්න එපා) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Header Section (Welcome To My Portfolio මැදට කර ඇත) -->
     <header>
         <h1>Welcome to My Portfolio</h1>
     </header>
 
-    <div class="container">
-        
-        <!-- 1. Header & Profile Section (Updated) -->
-    <header class="hero-header">
-        <div class="header-container">
-            <div class="header-left">
-                <h1 class="profile-name">Nimesh Pahalagama</h1>
+    <!-- 1. Dark Grey Hero/Profile Section (පින්තූරයේ පරිදිම) -->
+    <section class="hero-dark-section">
+        <div class="hero-inner-container">
+            <div class="hero-left-content">
+                <!-- ඔයාගේ නම -->
+                <h2 class="hero-main-name">Nimesh Pahalagama</h2>
                 
-                <div class="contact-info">
-                    <!-- Phone: Click කළ විට Dial වේ, Long Press කළ විට Copy වේ -->
+                <div class="hero-contact-details">
+                    <!-- Phone: එක පාරක් Touch කළ විට Dial වේ. Long Press කළ විට Copy Option එක ලැබේ -->
                     <p>
-                        <a href="tel:0716202957" class="selectable-contact">
-                            <i class="fa-solid fa-phone"></i> 0716202957
-                        </a>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:0716202957" class="selectable-contact">0716202957</a>
                     </p>
                     
-                    <!-- Email: Click කළ විට Compose වේ, Long Press කළ විට Copy වේ -->
+                    <!-- Email: එක පාරක් Touch කළ විට Compose වේ. Long Press කළ විට Copy Option එක ලැබේ -->
                     <p>
-                        <a href="rashmikanimesh546@gmail.com" class="selectable-contact">
-                            <i class="fa-solid fa-envelope"></i> rashmikanimesh546@gmail.com
-                        </a>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:rashmikanimesh546@gmail.com" class="selectable-contact">rashmikanimesh546@gmail.com</a>
                     </p>
                     
-                    <!-- Address -->
-                    <p class="selectable-contact address-text">
-                        <i class="fa-solid fa-location-dot"></i> 273/2, Dalupothagama, Katupotha.
+                    <!-- Address: Long Press කළ විට Copy Option එක ලැබේ -->
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="selectable-contact address-text">273/2, Dalupothagama, Katupotha.</span>
                     </p>
                 </div>
             </div>
             
-            <div class="header-right">
-                <img src="profile.jpg" alt="Nimesh Pahalagama" class="profile-square-img">
+            <div class="hero-right-image">
+                <!-- ඔයාගේ පින්තූරය (profile.jpg) -->
+                <img src="profile.jpg" alt="Professional Photo" class="profile-rect-img">
             </div>
         </div>
-    </header>
+    </section>
 
+    <!-- Main Content Container (විස්තර කෙළවරටම නොගොස්, වම පස සිට ලස්සනට පෙළගස්වයි) -->
     <div class="container">
         
         <!-- About Me Section -->
         <section class="profile-section">
             <h2>About Me</h2>
             <p>
-                I am an undergraduate IT student with a strong passion for data analytics, technology, and solving real-world problems through data-driven insights. I am dedicated to achieving success through hard work, courage, and enthusiasm while continuously expanding my knowledge and skills. Beyond my academic studies, I actively participate in social and community activities, developing strong interpersonal, teamwork, and leadership skills. I am eager to grow as a Data Analyst and make meaningful contributions through my technical skills and dedication.
+                I am an undergraduate IT student with a strong passion for data analytics, technology, and solving real-world problems through data-driven insights. I am dedicated to achieving success through hard work, courage, and enthusiasm while continuously expanding my knowledge and skills. Beyond my academic studies, I actively participate in social activities, developing strong interpersonal, teamwork, and leadership skills. I am eager to grow as a Data Analyst and make meaningful contributions through my technical skills and dedication.
             </p>
         </section>
 
+        <!-- 2. Education Details -->
         <section class="education-section">
             <h2>Education</h2>
             <ul>
                 <li>
-                    <strong>BSc (Hons) in Data Science</strong> -  Sri Lanka Technological Campus (SLTC Research University)
+                    <!-- පහත තියෙන සිංහල කෑල්ල අයින් කරලා ඔයාගේ උපාධිය/ඩිප්ලෝමාව සහ ආයතනයේ නම ලියන්න -->
+                    <strong>BSc (Hons) in Data Science</strong> - University /  Sri Lanka Technological Campus (SLTC Research University)
                 </li>
                 <li>
-                    <strong>G.C.E. Advanced Level</strong> - Mayurapada Central College (Physical Science)
+                    <!-- පහත තියෙන සිංහල කෑල්ල අයින් කරලා ඔයාගේ උසස් පෙළ විස්තර ලියන්න -->
+                    <strong>G.C.E. Advanced Level(2023)</strong> - Mayurapada Central College (Physical Science)
                 </li>
             </ul>
         </section>
 
+        <!-- 3. Project Details -->
         <section class="projects-section">
             <h2>Projects</h2>
             <div class="project-card">
+                <!-- පහත සිංහල කෑල්ල අයින් කරලා ඔයා කරපු ප්‍රොජෙක්ට් එකක නම ලියන්න -->
                 <h3>Project Title: Portfolio Website Development</h3>
-                <p> Developed a personal portfolio website using HTML and CSS to showcase my academic background, projects, and skills.</p>
+                <!-- පහත සිංහල කෑල්ල අයින් කරලා ප්‍රොජෙක්ට් එකෙන් කරපු දේ කෙටියෙන් ඉංග්‍රීසියෙන් ලියන්න -->
+                <p>Developed a personal portfolio website using HTML and CSS to showcase my academic background, projects, and skills.</p>
             </div>
         </section>
 
+        <!-- 4. Achievements -->
         <section class="achievements-section">
             <h2>Achievements</h2>
             <ul>
+                <li><!--Achievements gaththahama danna  --></li>
             </ul>
         </section>
 
+        <!-- Bonus Feature: Download CV -->
         <section class="bonus-section">
             <h2>Bonus Features</h2>
             <a href="https://drive.google.com/file/d/1RN1Y89cw0SMlhRR-20ddTQE_YKDqaWvW/view?usp=drive_link" class="btn">Download My CV</a>
         </section>
 
-        <section class="contact-section">
-            <h2>Contact Me</h2>
-            <p>Email: rashmikanimesh546@gmail.com</p>
+        <!-- Social Profile Links Only (යටම තිබුණු Contact Me එක අයින් කර ඇත) -->
+        <section class="social-section">
+            <h2>Social Links</h2>
             <div class="social-links">
-                <a href="linkedin.com/in/nimesh-pahalagama-6a754b416" target="_blank">LinkedIn</a> | 
-                <a href="https://github.com/nimeshpahalagama" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/your-username" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a> | 
+                <a href="https://github.com/your-username" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
         </section>
     </div>
+
 <script src="//code.tidio.co/8glkfquvzhuuioidguxjb70g3xskasjy.js" async></script>
 </body>
 </html>
