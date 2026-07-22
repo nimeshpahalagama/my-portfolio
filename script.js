@@ -137,7 +137,7 @@ speakerBtn.addEventListener('click', (e) => {
     }
 });
 
-// 5. AI Assistant Dynamic Responses
+// 5. AI Assistant Dynamic Responses (Updated)
 const chatToggleBtn = document.getElementById("chat-toggle-btn");
 const chatCloseBtn = document.getElementById("chat-close-btn");
 const chatBox = document.getElementById("chat-box");
@@ -145,23 +145,43 @@ const chatSendBtn = document.getElementById("chat-send-btn");
 const chatInput = document.getElementById("chat-input");
 const chatMessages = document.getElementById("chat-messages");
 
-chatToggleBtn.addEventListener("click", () => chatBox.classList.toggle("active"));
-chatCloseBtn.addEventListener("click", () => chatBox.classList.remove("active"));
-
-function getAIResponse(userQuery) {
-    const query = userQuery.toLowerCase();
-    if (query.includes("skills") || query.includes("technology") || query.includes("stack")) {
-        return "Nimesh specializes in Data Science, Machine Learning, Python, Web Development, and SQL!";
-    } else if (query.includes("education") || query.includes("degree") || query.includes("university")) {
-        return "Nimesh is currently an IT Undergraduate in Sri Lanka focusing on Data Science & Software Engineering.";
-    } else if (query.includes("contact") || query.includes("email") || query.includes("phone")) {
-        return "You can reach Nimesh via the Contact section below, or email directly using the link!";
-    } else {
-        return "Thank you for reaching out! Nimesh will get back to your inquiry soon.";
+// Chatbox Open / Close Toggle Logic
+if (chatToggleBtn && chatBox) {
+    chatToggleBtn.addEventListener("click", () => {
+        chatBox.classList.toggle("active");
+        chatBox.classList.toggle("hidden");
+    });
+    if (chatCloseBtn) {
+        chatCloseBtn.addEventListener("click", () => {
+            chatBox.classList.remove("active");
+            chatBox.classList.add("hidden");
+        });
     }
 }
 
+// AI Smart Reply Engine
+function getAIResponse(userQuery) {
+    const query = userQuery.toLowerCase();
+    if (query.includes("name") || query.includes("who are you") || query.includes("nama")) {
+        return "I am Nimesh Pahalagama's AI Assistant! Nimesh is a Computer Science / Software Engineering undergraduate.";
+    } else if (query.includes("project") || query.includes("work") || query.includes("system")) {
+        return "Nimesh has worked on SmartCare Hospital Management System (Java/Spring Boot)[cite: 1], a Library Management System (Python/Tkinter), and his personal Portfolio Website!";
+    } else if (query.includes("skill") || query.includes("technology") || query.includes("stack") || query.includes("know")) {
+        return "Nimesh specializes in Data Science, Machine Learning, Java, Spring Boot, Python, Web Development, and SQL!";
+    } else if (query.includes("education") || query.includes("degree") || query.includes("university")) {
+        return "Nimesh is currently an IT Undergraduate in Sri Lanka focusing on Data Science & Software Engineering.";
+    } else if (query.includes("contact") || query.includes("email") || query.includes("phone") || query.includes("hire")) {
+        return "You can reach Nimesh via the Contact section below, or email directly using the link!";
+    } else if (query.includes("hi") || query.includes("hello") || query.includes("hey")) {
+        return "Hello there! How can I assist you regarding Nimesh's portfolio and projects?";
+    } else {
+        return "Thank you for reaching out! I'm a simple portfolio assistant. You can ask me about Nimesh's 'name', 'skills', 'projects', 'education', or 'contact' details!";
+    }
+}
+
+// Message Send Logic
 function sendMessage() {
+    if (!chatInput) return;
     const text = chatInput.value.trim();
     if (text !== "") {
         const userMsg = document.createElement("div");
@@ -177,88 +197,14 @@ function sendMessage() {
             botMsg.textContent = getAIResponse(text);
             chatMessages.appendChild(botMsg);
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 800);
+        }, 500);
     }
 }
 
-chatSendBtn.addEventListener("click", sendMessage);
-chatInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendMessage();
-});
-
-// ===================================================
-// AI ASSISTANT CHATBOT LOGIC
-// ===================================================
-const chatToggleBtn = document.getElementById('chat-toggle-btn');
-const chatCloseBtn = document.getElementById('chat-close-btn');
-const chatBox = document.getElementById('chat-box');
-const chatInput = document.getElementById('chat-input');
-const chatSendBtn = document.getElementById('chat-send-btn');
-const chatMessages = document.getElementById('chat-messages');
-
-// Chatbox Window එක Open / Close කිරීම
-if (chatToggleBtn && chatBox) {
-    chatToggleBtn.addEventListener('click', () => {
-        chatBox.classList.toggle('hidden');
-    });
-    
-    if (chatCloseBtn) {
-        chatCloseBtn.addEventListener('click', () => {
-            chatBox.classList.add('hidden');
-        });
-    }
-}
-
-// User යවන Message එක Screen එකට දමා AI එකෙන් Reply ලබා ගැනීම
-function sendMessage() {
-    if (!chatInput) return;
-    const userText = chatInput.value.trim();
-    if (userText === '') return;
-
-    // 1. User කියපු දේ Chat Window එකේ පෙන්වීම
-    appendMessage(userText, 'user-message');
-    chatInput.value = '';
-
-    // 2. AI එකෙන් තත්පර භාගයකින් Reply එකක් ලබා දීම
-    setTimeout(() => {
-        const botReply = getAIResponse(userText.toLowerCase());
-        appendMessage(botReply, 'bot-message');
-    }, 500);
-}
-
-// Chat Box එකට අලුත් Messages එකතු කරන Function එක
-function appendMessage(text, className) {
-    if (!chatMessages) return;
-    const msgDiv = document.createElement('div');
-    msgDiv.classList.add('message', className);
-    msgDiv.innerText = text;
-    chatMessages.appendChild(msgDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to bottom
-}
-
-// Smart AI Reply Engine (Keywords අනුව පිළිතුරු සැපයීම)
-function getAIResponse(input) {
-    if (input.includes('name') || input.includes('who are you') || input.includes('nama')) {
-        return "I am Nimesh Pahalagama's AI Assistant! Nimesh is a Computer Science / Software Engineering undergraduate.";
-    } else if (input.includes('project') || input.includes('work') || input.includes('system')) {
-        return "Nimesh has worked on SmartCare Hospital Management System (Java/Spring Boot), a Library Management System (Python/Tkinter), and his personal Portfolio Website!";
-    } else if (input.includes('skill') || input.includes('language') || input.includes('tech') || input.includes('know')) {
-        return "Nimesh is skilled in Java, Python, Spring Boot, MySQL, HTML5, CSS3, JavaScript, and Git/GitHub.";
-    } else if (input.includes('contact') || input.includes('email') || input.includes('phone') || input.includes('hire') || input.includes('reach')) {
-        return "You can contact Nimesh directly using the Contact Form on this website or reach out via LinkedIn/Email!";
-    } else if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('siri')) {
-        return "Hello there! How can I assist you regarding Nimesh's portfolio and projects?";
-    } else {
-        return "I'm a simple portfolio assistant. You can ask me about Nimesh's 'name', 'skills', 'projects', or 'contact' details!";
-    }
-}
-
-// Send Button එක Click කරද්දී සහ Enter Key එක ඔබද්දී Event එක Trigger වීම
+// Event Listeners for Send
 if (chatSendBtn && chatInput) {
-    chatSendBtn.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
+    chatSendBtn.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
     });
 }
