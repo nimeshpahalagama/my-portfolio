@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. මෙතනට Web Browser එකේ උඩින්ම පෙනෙන Title එක දාන්න -->
     <title>Nimesh Pahalagama | Portfolio</title>
+    
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Interactive Mouse Art Canvas -->
+    <!-- Mouse Particle Art Canvas -->
     <canvas id="cursor-canvas"></canvas>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">NIMESH<span>.DEV</span></div>
+        <!-- 2. Navbar Logo එක (ඔයාගේ නම) -->
+        <div class="logo">NIMESH<span>Pahalagama</span></div>
         <ul class="nav-links">
             <li><a href="#home" class="active"><i class="fas fa-home"></i> HOME</a></li>
             <li><a href="#about"><i class="fas fa-user"></i> ABOUT ME</a></li>
@@ -29,10 +33,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Top Section) -->
     <section id="home" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <!-- 3. ඔයාගේ සම්පූර්ණ නම -->
             <h1 class="name">NIMESH PAHALAGAMA</h1>
             <h2 class="typing-text">I am a <span id="typed-text"></span><span class="cursor">&nbsp;</span></h2>
             
@@ -43,22 +48,25 @@
         </div>
     </section>
 
-    <!-- About Section (Centered Profile Photo + Details Below) -->
+    <!-- About Section -->
     <section id="about" class="about-section">
         <h2 class="section-heading">ABOUT <span>ME</span></h2>
         
         <div class="profile-center-container">
             <div class="profile-img-box">
-                <img src="profile.jpg" alt="Nimesh Pahalagama">
+                <!-- 4. ඔයාගේ Profile Photo එකේ File Name එක දාන්න (උදා: profile.jpg) -->
+                <img src="profile.jpg" alt="Profile Picture">
             </div>
         </div>
 
         <div class="about-content-center">
+            <!-- 5. ඔයා ගැන පොඩි විස්තරයක් (Bio) -->
             <p class="about-text">
-                I am a passionate IT undergraduate from Sri Lanka, specializing in Data Science, Machine Learning, and Software Engineering. I love analyzing data, building intelligent systems, and creating seamless UI/UX web applications.
+                I am an undergraduate IT student with a strong passion for data analytics, technology, and solving real-world problems through data-driven insights. I am dedicated to achieving success through hard work, courage, and enthusiasm while continuously expanding my knowledge and skills. Beyond my academic studies, I actively participate in social and community activities, developing strong interpersonal, teamwork, and leadership skills. I am eager to grow as a Data Analyst and make meaningful contributions through my technical skills and dedication.
             </p>
             
             <div class="stats-grid">
+                <!-- 6. Card වල තියෙන ගණන් විස්තර -->
                 <div class="stat-card">
                     <h3>10+</h3>
                     <p>Projects Completed</p>
@@ -75,20 +83,22 @@
         </div>
     </section>
 
-    <!-- Qualifications / Education Section -->
+    <!-- Qualifications Section -->
     <section id="qualifications" class="qualifications-section">
         <h2 class="section-heading">MY <span>QUALIFICATIONS</span></h2>
         <div class="card-grid">
+            <!-- 7. Campus / University විස්තර -->
             <div class="custom-card">
                 <i class="fas fa-university card-icon"></i>
-                <h3>BSc (Hons) in Information Technology</h3>
-                <p class="institution">Your University / Higher Education Institute</p>
-                <span class="badge">2023 - Present</span>
+                <h3>BSc (Hons) in Data Science</h3>
+                <p class="institution">Sri Lanka Technological Campus (SLTC Research University), Sri Lanka</p>
+                <span class="badge">2025 - Present</span>
             </div>
+            <!-- 8. School / AL විස්තර -->
             <div class="custom-card">
                 <i class="fas fa-school card-icon"></i>
                 <h3>G.C.E. Advanced Level</h3>
-                <p class="institution">Your School Name, Sri Lanka</p>
+                <p class="institution">Mayurapada Central College, Sri Lanka</p>
                 <span class="badge">Physical Science Stream</span>
             </div>
         </div>
@@ -98,17 +108,19 @@
     <section id="projects" class="projects-section">
         <h2 class="section-heading">FEATURED <span>PROJECTS</span></h2>
         <div class="card-grid">
+            <!-- 9. Project 1 (නම, විස්තරය, පාවිච්චි කල Tech, සහ Github Link එක වෙනස් කරන්න) -->
             <div class="custom-card">
                 <h3>Personal Portfolio Website</h3>
                 <p>Interactive web application designed with modern dark neon aesthetics and particle canvas effects.</p>
                 <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
-                <a href="https://github.com/nimeshpahalagama" target="_blank" class="project-link">GitHub Source <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://github.com/yourusername" target="_blank" class="project-link">GitHub Source <i class="fas fa-external-link-alt"></i></a>
             </div>
+            <!-- 10. Project 2 -->
             <div class="custom-card">
                 <h3>Student Record System</h3>
                 <p>Automated software built to manage student performance, database records, and reporting.</p>
                 <div class="tags"><span>Java</span><span>MySQL</span><span>OOP</span></div>
-                <a href="https://github.com/nimeshpahalagama" target="_blank" class="project-link">GitHub Source <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://github.com/yourusername" target="_blank" class="project-link">GitHub Source <i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
     </section>
@@ -117,6 +129,7 @@
     <section id="achievements" class="achievements-section">
         <h2 class="section-heading">ACHIEVEMENTS & <span>CERTIFICATIONS</span></h2>
         <div class="card-grid">
+            <!-- 11. Certifications / දිනාගත් දේවල් -->
             <div class="custom-card">
                 <i class="fas fa-trophy card-icon highlight"></i>
                 <h3>Web Development Certification</h3>
@@ -130,35 +143,40 @@
         <h2 class="section-heading">GET IN <span>TOUCH</span></h2>
         
         <div class="contact-grid">
+            <!-- 12. Email address එක -->
             <div class="contact-card">
                 <i class="fas fa-envelope"></i>
                 <h4>Email</h4>
-                <p><a href="mailto:nimesh@example.com">nimesh@example.com</a></p>
+                <p><a href="mailto:your-email@example.com">rashmikanimesh546@gmail.com</a></p>
             </div>
+            <!-- 13. Phone Number එක -->
             <div class="contact-card">
                 <i class="fas fa-phone"></i>
                 <h4>Phone Number</h4>
-                <p><a href="tel:+94771234567">+94 77 123 4567</a></p>
+                <p><a href="tel:+94771234567">0716202957</a></p>
             </div>
+            <!-- 14. WhatsApp Number එක -->
             <div class="contact-card">
                 <i class="fab fa-whatsapp"></i>
                 <h4>WhatsApp</h4>
-                <p><a href="https://wa.me/94771234567" target="_blank">Chat on WhatsApp</a></p>
+                <p><a href="https://wa.me/94771234567" target="_blank">0716202957</a></p>
             </div>
+            <!-- 15. Address එක -->
             <div class="contact-card">
                 <i class="fas fa-map-marker-alt"></i>
                 <h4>Address</h4>
-                <p>Colombo, Sri Lanka</p>
+                <p>273/2, Dalupothagama, Katupotha.</p>
             </div>
         </div>
 
+        <!-- 16. GitHub සහ LinkedIn Links -->
         <div class="social-profiles">
-            <a href="https://github.com/nimeshpahalagama" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub Profile</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            <a href="https://github.com/yourusername" target="_blank" class="social-btn"><i class="fab fa-github"></i> https://github.com/nimeshpahalagamae</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> https://www.linkedin.com/in/nimesh-pahalagama-6a754b416/</a>
         </div>
     </section>
 
-    <!-- Continuous Background Calm Music Widget (Sticky Floating Speaker Icon) -->
+    <!-- Background Calm Music Player Widget (Speaker Icon) -->
     <div class="music-widget">
         <button id="speaker-btn" class="floating-btn" title="Toggle Music Mute/Unmute">
             <i class="fas fa-volume-up"></i>
@@ -168,7 +186,7 @@
         </audio>
     </div>
 
-    <!-- AI Chatbot Assistant Floating Widget -->
+    <!-- AI Chatbot Assistant Widget -->
     <div class="chat-widget">
         <button id="chat-toggle-btn" class="floating-btn"><i class="fas fa-robot"></i></button>
         <div class="chat-box" id="chat-box">
@@ -186,9 +204,10 @@
                 <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
-    </div>
+    </section>
 
     <footer>
+        <!-- 17. Footer එකේ තියෙන Copyright text එක -->
         <p>&copy; 2026 Nimesh Pahalagama. All Rights Reserved.</p>
     </footer>
 
