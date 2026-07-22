@@ -509,3 +509,51 @@ body.light-mode .custom-card p,
 body.light-mode .about-text {
     color: #222222 !important;
 }
+
+/* ===================================================
+   RESPONSIVE NAVBAR & LOGO OVERLAP FIX
+   =================================================== */
+
+/* Header එක ඇතුළේ Layout එක හරියට තියාගැනීම */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    flex-wrap: wrap; /* Space මදි වුවහොත් පල්ලෙහාට Push වීමට */
+}
+
+/* Medium Screen (Laptop බාගෙට දැමූ විට / Tablet View) */
+@media screen and (max-width: 1024px) {
+    .logo {
+        font-size: 1.2rem !important; /* Logo එකේ අකුරු ප්‍රමාණය පොඩි කිරීම */
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        gap: 15px !important; /* Menu items අතර පරතරය අඩු කිරීම */
+    }
+
+    .nav-links a {
+        font-size: 0.85rem !important; /* Menu අකුරු පොඩි කිරීම */
+        padding: 5px 8px !important;
+    }
+}
+
+/* Small Screen (Mobile View) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Screen එක ගොඩක් පොඩි නම් Logo එක උඩටත් Menu එක යටටත් ගෙන ඒම */
+        gap: 10px;
+    }
+    
+    .logo {
+        font-size: 1.1rem !important;
+    }
+    
+    .nav-links {
+        gap: 10px !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
