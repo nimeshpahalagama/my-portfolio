@@ -110,30 +110,30 @@ themeToggleBtn.addEventListener("click", () => {
     icon.classList.toggle("fa-sun");
 });
 
-// 4. Background Audio Speaker Control
-const speakerBtn = document.getElementById("speaker-btn");
-const bgMusic = document.getElementById("bg-music");
+// Background Music Play/Pause Controller
+const bgMusic = document.getElementById('bg-music');
+const speakerBtn = document.getElementById('speaker-btn');
+const speakerIcon = speakerBtn.querySelector('i');
 
-function enableAudio() {
-    bgMusic.muted = false;
-    bgMusic.play().then(() => {
-        speakerBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-    }).catch(() => {
-        speakerBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-    });
-    document.removeEventListener('click', enableAudio);
-}
-document.addEventListener('click', enableAudio);
+// Page එකේ ඕනෑම තැනක පළමු Click එක දුන් පසු Music එක Unmute වී Play වීම
+document.addEventListener('click', function() {
+    if (bgMusic.muted) {
+        bgMusic.muted = false;
+        bgMusic.play();
+        speakerIcon.className = 'fas fa-volume-up';
+    }
+}, { once: true }); // එක පාරක් පමණක් ක්‍රියාත්මක වේ
 
-speakerBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
+// Button එක Click කරද්දී Music එක Mute / Unmute කිරීම
+speakerBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Page click event එක නවත්වයි
     if (bgMusic.muted || bgMusic.paused) {
         bgMusic.muted = false;
         bgMusic.play();
-        speakerBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        speakerIcon.className = 'fas fa-volume-up';
     } else {
         bgMusic.muted = true;
-        speakerBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        speakerIcon.className = 'fas fa-volume-mute';
     }
 });
 
