@@ -10,17 +10,20 @@
 </head>
 <body>
 
+    <!-- Interactive Mouse Art Canvas -->
+    <canvas id="cursor-canvas"></canvas>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">Nimesh<span>.dev</span></div>
+        <div class="logo">NIMESH<span>.DEV</span></div>
         <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> ABOUT ME</a></li>
+            <li><a href="#qualifications"><i class="fas fa-graduation-cap"></i> QUALIFICATIONS</a></li>
+            <li><a href="#projects"><i class="fas fa-code"></i> PROJECTS</a></li>
+            <li><a href="#achievements"><i class="fas fa-award"></i> ACHIEVEMENTS</a></li>
+            <li><a href="#contact"><i class="fas fa-phone"></i> CONTACT</a></li>
         </ul>
-        <!-- Light / Dark Mode Toggle Button -->
         <div class="theme-toggle" id="theme-toggle">
             <i class="fas fa-moon"></i>
         </div>
@@ -28,108 +31,146 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h3 class="greeting">Hello, World! 👋 I am</h3>
-            <h1 class="name">Nimesh Pahalagama</h1>
+            <h1 class="name">NIMESH PAHALAGAMA</h1>
             <h2 class="typing-text">I am a <span id="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-            <p class="hero-description">
-                Passionate about building scalable web applications, solving complex algorithmic problems, and crafting interactive UI/UX experiences.
-            </p>
+            
             <div class="hero-btns">
-                <a href="#projects" class="btn primary-btn">View Projects <i class="fas fa-arrow-right"></i></a>
-                <a href="#contact" class="btn secondary-btn">Contact Me</a>
-            </div>
-            <div class="social-icons">
-                <a href="https://github.com/nimeshpahalagama" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:nimesh@example.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="img-wrapper">
-                <img src="profile.jpg" alt="Nimesh Pahalagama">
+                <a href="#qualifications" class="btn primary-btn"><i class="fas fa-graduation-cap"></i> Qualifications</a>
+                <a href="#projects" class="btn secondary-btn"><i class="fas fa-briefcase"></i> View Projects</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Centered Profile Photo + Details Below) -->
     <section id="about" class="about-section">
-        <h2 class="section-heading">About <span>Me</span></h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>I am an IT Undergraduate passionate about Software Engineering and Web Development. I love turning complex problems into simple, beautiful, and intuitive designs.</p>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>10+</h3>
-                        <p>Completed Projects</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>5+</h3>
-                        <p>Programming Languages</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>100%</h3>
-                        <p>Code Quality</p>
-                    </div>
+        <h2 class="section-heading">ABOUT <span>ME</span></h2>
+        
+        <div class="profile-center-container">
+            <div class="profile-img-box">
+                <img src="profile.jpg" alt="Nimesh Pahalagama">
+            </div>
+        </div>
+
+        <div class="about-content-center">
+            <p class="about-text">
+                I am a passionate IT undergraduate from Sri Lanka, specializing in Data Science, Machine Learning, and Software Engineering. I love analyzing data, building intelligent systems, and creating seamless UI/UX web applications.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-card">
+                    <h3>5+</h3>
+                    <p>Tech Stack Expertise</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Dedication</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <h2 class="section-heading">My <span>Tech Stack</span></h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fab fa-html5" style="color: #e34f26;"></i><h3>HTML5</h3></div>
-            <div class="skill-card"><i class="fab fa-css3-alt" style="color: #1572b6;"></i><h3>CSS3</h3></div>
-            <div class="skill-card"><i class="fab fa-js" style="color: #f7df1e;"></i><h3>JavaScript</h3></div>
-            <div class="skill-card"><i class="fab fa-java" style="color: #007396;"></i><h3>Java</h3></div>
-            <div class="skill-card"><i class="fab fa-python" style="color: #3776ab;"></i><h3>Python</h3></div>
-            <div class="skill-card"><i class="fab fa-git-alt" style="color: #f05032;"></i><h3>Git & GitHub</h3></div>
+    <!-- Qualifications / Education Section -->
+    <section id="qualifications" class="qualifications-section">
+        <h2 class="section-heading">MY <span>QUALIFICATIONS</span></h2>
+        <div class="card-grid">
+            <div class="custom-card">
+                <i class="fas fa-university card-icon"></i>
+                <h3>BSc (Hons) in Information Technology</h3>
+                <p class="institution">Your University / Higher Education Institute</p>
+                <span class="badge">2023 - Present</span>
+            </div>
+            <div class="custom-card">
+                <i class="fas fa-school card-icon"></i>
+                <h3>G.C.E. Advanced Level</h3>
+                <p class="institution">Your School Name, Sri Lanka</p>
+                <span class="badge">Physical Science Stream</span>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
-        <h2 class="section-heading">Featured <span>Projects</span></h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Personal Portfolio Website</h3>
-                    <p>A sleek, interactive portfolio featuring glassmorphism and animated components.</p>
-                    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                    <a href="https://github.com/nimeshpahalagama/my-portfolio" target="_blank" class="project-link">Source Code <i class="fas fa-external-link-alt"></i></a>
-                </div>
+        <h2 class="section-heading">FEATURED <span>PROJECTS</span></h2>
+        <div class="card-grid">
+            <div class="custom-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>Interactive web application designed with modern dark neon aesthetics and particle canvas effects.</p>
+                <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                <a href="https://github.com/nimeshpahalagama" target="_blank" class="project-link">GitHub Source <i class="fas fa-external-link-alt"></i></a>
             </div>
-            <div class="project-card">
-                <div class="project-info">
-                    <h3>Student Management System</h3>
-                    <p>An automated Java application for managing student records and grades efficiently.</p>
-                    <div class="tags"><span>Java</span><span>OOP</span><span>MySQL</span></div>
-                    <a href="#" class="project-link">Source Code <i class="fas fa-external-link-alt"></i></a>
-                </div>
+            <div class="custom-card">
+                <h3>Student Record System</h3>
+                <p>Automated software built to manage student performance, database records, and reporting.</p>
+                <div class="tags"><span>Java</span><span>MySQL</span><span>OOP</span></div>
+                <a href="https://github.com/nimeshpahalagama" target="_blank" class="project-link">GitHub Source <i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <h2 class="section-heading">ACHIEVEMENTS & <span>CERTIFICATIONS</span></h2>
+        <div class="card-grid">
+            <div class="custom-card">
+                <i class="fas fa-trophy card-icon highlight"></i>
+                <h3>Web Development Certification</h3>
+                <p>Completed comprehensive course covering frontend and backend technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
     <section id="contact" class="contact-section">
-        <h2 class="section-heading">Get In <span>Touch</span></h2>
-        <div class="contact-container">
-            <form class="contact-form" id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn primary-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-            </form>
+        <h2 class="section-heading">GET IN <span>TOUCH</span></h2>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p><a href="mailto:nimesh@example.com">nimesh@example.com</a></p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h4>Phone Number</h4>
+                <p><a href="tel:+94771234567">+94 77 123 4567</a></p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <h4>WhatsApp</h4>
+                <p><a href="https://wa.me/94771234567" target="_blank">Chat on WhatsApp</a></p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Address</h4>
+                <p>Colombo, Sri Lanka</p>
+            </div>
+        </div>
+
+        <div class="social-profiles">
+            <a href="https://github.com/nimeshpahalagama" target="_blank" class="social-btn"><i class="fab fa-github"></i> GitHub Profile</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
         </div>
     </section>
 
-    <!-- AI ASSISTANT CHATBOT WIDGET -->
-    <div class="chat-widget">
-        <button id="chat-toggle-btn" class="chat-btn">
-            <i class="fas fa-robot"></i>
+    <!-- Continuous Background Calm Music Widget (Sticky Floating Speaker Icon) -->
+    <div class="music-widget">
+        <button id="speaker-btn" class="floating-btn" title="Toggle Music Mute/Unmute">
+            <i class="fas fa-volume-up"></i>
         </button>
+        <audio id="bg-music" loop autoplay muted>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-calm-ambient-147.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- AI Chatbot Assistant Floating Widget -->
+    <div class="chat-widget">
+        <button id="chat-toggle-btn" class="floating-btn"><i class="fas fa-robot"></i></button>
         <div class="chat-box" id="chat-box">
             <div class="chat-header">
                 <h4><i class="fas fa-brain"></i> AI Assistant</h4>
@@ -141,14 +182,14 @@
                 </div>
             </div>
             <div class="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask me something...">
+                <input type="text" id="chat-input" placeholder="Ask a question...">
                 <button id="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Nimesh Pahalagama. Built with passion & code.</p>
+        <p>&copy; 2026 Nimesh Pahalagama. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
