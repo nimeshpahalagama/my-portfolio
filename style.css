@@ -557,3 +557,63 @@ body.light-mode .about-text {
         justify-content: center;
     }
 }
+
+/* ===================================================
+   NAVBAR OVERLAP ABSOLUTE FIX
+   =================================================== */
+
+/* Header & Container Control */
+header, nav, .navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important; /* ඉඩ මදි වූ විට පල්ලෙහාට යැවීමට */
+    row-gap: 15px !important;
+    position: relative !important;
+}
+
+/* Logo Fix */
+.logo {
+    position: static !important; /* Absolute Position එක අයින් කිරීම */
+    flex-shrink: 0 !important;   /* Logo එක තද වීම වැළැක්වීම */
+    margin-right: 20px !important;
+    white-space: nowrap !important;
+}
+
+/* Nav Links Container Fix */
+.nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 15px !important;
+    position: static !important;
+}
+
+/* Nav Links Single Item Fix */
+.nav-links a, 
+.nav-links li {
+    position: relative !important;
+    white-space: nowrap !important; /* අකුරු කැඩී එක මත එක වැටීම වැළැක්වීම */
+    flex-shrink: 0 !important;
+}
+
+/* Screen එක බාගෙට Resize කළ විට (Medium Screen) */
+@media screen and (max-width: 1200px) {
+    .logo {
+        font-size: 1.1rem !important;
+    }
+    .nav-links {
+        gap: 10px !important;
+    }
+    .nav-links a {
+        font-size: 0.8rem !important;
+        padding: 5px 8px !important;
+    }
+}
+
+/* Mobile / Very Small Screen */
+@media screen and (max-width: 850px) {
+    header, nav, .navbar {
+        justify-content: center !important; /* Screen එක ගොඩක් පොඩි නම් මැදට ගෙන ඒම */
+    }
+}
