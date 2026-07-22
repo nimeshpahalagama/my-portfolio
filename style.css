@@ -447,3 +447,65 @@ footer {
     color: var(--text-gray);
     font-size: 0.9rem;
 }
+/* ===================================================
+   LIGHT MODE FIXES (Dark Mode Off කළ විට ඇතිවන ප්‍රශ්න සඳහා)
+   =================================================== */
+
+/* 1. Light Mode එකේදී Header එකේ Logo එක සහ Menu Links පැහැදිලිව පෙනීමට */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .logo {
+    color: #111111 !important; /* "Nimesh" කොටස තද කළු පාටට */
+}
+
+body.light-mode .logo span {
+    color: #0072ff !important; /* ".DEV" කොටස තද නිල් පාටට */
+}
+
+body.light-mode .nav-links a {
+    color: #222222 !important; /* Nav links (Home, About, Qualifications...) තදින් පෙනීමට */
+    font-weight: 600;
+}
+
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+    color: #0072ff !important; /* Click/Hover කළ විට පෙනෙන පාට */
+}
+
+/* 2. Hero Section (Home Background එක උඩින් ඇති Text පැහැදිලි කිරීමට) */
+body.light-mode .hero-overlay {
+    background: rgba(0, 0, 0, 0.55) !important; /* Dark background image එක උඩින් පොඩි dark layer එකක් දමා white text පැහැදිලිව පෙන්වයි */
+}
+
+body.light-mode .hero-content .name {
+    color: #ffffff !important; /* Light mode එකේදීත් Background එක Dark නිසා Name එක White කර පෙන්වයි */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+body.light-mode .hero-content .typing-text {
+    color: #f0f0f0 !important;
+}
+
+/* 3. අනෙකුත් Headings සහ Text Light Mode එකේදී පැහැදිලිව පෙනීමට */
+body.light-mode .section-heading {
+    color: #111111 !important;
+}
+
+body.light-mode .custom-card,
+body.light-mode .stat-card,
+body.light-mode .contact-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    color: #222222 !important;
+}
+
+body.light-mode .custom-card h3,
+body.light-mode .custom-card p,
+body.light-mode .about-text {
+    color: #222222 !important;
+}
